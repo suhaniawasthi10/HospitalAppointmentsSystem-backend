@@ -1,0 +1,39 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    # Replace with your database URL
+    url: jdbc:postgresql://your-db-host/your-db-name
+    # Replace with your database username
+    username: your_username
+    # Replace with your database password
+    password: your_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    # Replace with your mailtrap username
+    username: your_mailtrap_username
+    # Replace with your mailtrap password
+    password: your_mailtrap_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  # Replace with a strong secret key (at least 256 bits for HS256)
+  secret: your_jwt_secret_key_here
+  expiration: 86400000
